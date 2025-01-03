@@ -18,8 +18,6 @@ const Banner = () => {
   const [bannerSwiper, setBannerSwiper] = useState(null);
   const [paginationSwiper, setPaginationSwiper] = useState(null);
 
-  console.log({ bannerSwiper, paginationSwiper });
-
   useEffect(() => {
     const fetchSlides = async () => {
       try {

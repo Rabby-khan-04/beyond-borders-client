@@ -11,6 +11,7 @@ export default {
       colors: {
         primary: "#325437",
         secondary: "#a7bb89",
+        des_gray: "#555555",
         description: "#4E5651",
         background: "#fcfaee",
         // primary: "#ff9933",
