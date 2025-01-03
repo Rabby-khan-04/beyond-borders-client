@@ -3,3 +3,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.container {
+  @apply max-w-[1580px] mx-auto;
+}
+
+.menu__container li a {
+  @apply px-4 py-2 text-base font-palanquin_park uppercase;
+}
+
+.primary__btn {
+  @apply inline-block text-lg font-bold font-palanquin_park py-2 px-8 text-white bg-primary transition-all duration-300 hover:bg-black uppercase;
+}
+
+.secondary__btn {
+  @apply inline-block text-lg font-bold font-palanquin_park py-2 px-8 text-white bg-black transition-all duration-300  hover:bg-primary uppercase;
+}
