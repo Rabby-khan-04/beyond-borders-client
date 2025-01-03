@@ -8,6 +8,7 @@ import AllTouristsSpot from "../pages/Tourists/AllTouristsSpot";
 import UpdateTouristsSpot from "../pages/Tourists/UpdateTouristsSpot";
 import ViewTouristsSpot from "../pages/Tourists/ViewTouristsSpot";
 import SpotList from "../pages/Tourists/SpotList";
+import axios from "axios";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,7 @@ const router = createBrowserRouter([
       {
         path: "tourists-spot/:id",
         element: <ViewTouristsSpot />,
+        loader: ({ params }) => axios.get(),
       },
       {
         path: "spot-list/:email",
