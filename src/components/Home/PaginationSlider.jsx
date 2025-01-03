@@ -37,8 +37,8 @@ const PaginationSlider = ({ slides, setPaginationSwiper, bannerSwiper }) => {
 
 PaginationSlider.propTypes = {
   slides: PropTypes.array,
-  setPaginationSwiper: PropTypes.func.isRequired,
-  bannerSwiper: PropTypes.object.isRequired,
+  setPaginationSwiper: PropTypes.func,
+  bannerSwiper: PropTypes.object,
 };
 
 export default PaginationSlider;
