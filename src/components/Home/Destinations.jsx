@@ -18,8 +18,6 @@ const Destinations = () => {
     fetchDestinations();
   }, []);
 
-  console.log(destinations);
-
   return (
     <section className="bg-background pt-28 pb-12">
       <div className="container">

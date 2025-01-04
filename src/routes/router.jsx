@@ -43,7 +43,10 @@ const router = createBrowserRouter([
       {
         path: "tourists-spot/:id",
         element: <ViewTouristsSpot />,
-        loader: ({ params }) => axios.get(),
+        loader: ({ params }) =>
+          axios.get(
+            `http://localhost:5000/api/v1/tourists-spot/spot/${params.id}`
+          ),
       },
       {
         path: "spot-list/:email",
