@@ -9,7 +9,7 @@ const DestinationCard = ({ destination }) => {
     _id,
     image,
     tourists_spot_name,
-    location,
+    country_name,
     short_description,
     average_cost,
     seasonality,
@@ -30,7 +30,7 @@ const DestinationCard = ({ destination }) => {
               {tourists_spot_name}
             </h2>
             <p className="font-palanquin_park font-semibold text-primary text-lg">
-              Average Cost: ${average_cost}
+              Cost: ${average_cost}
             </p>
           </div>
 
@@ -47,7 +47,7 @@ const DestinationCard = ({ destination }) => {
             <div className="flex items-center gap-3">
               <img src={locationIcon} className="size-6" alt="" />
               <p className="text-des_gray text-lg font-montserrat font-semibold">
-                {location}
+                {country_name}
               </p>
             </div>
             <div className="flex items-center gap-3">

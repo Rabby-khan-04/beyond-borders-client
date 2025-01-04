@@ -27,3 +27,7 @@
 .input {
   @apply block w-full py-4 px-6 bg-background border-secondary border rounded-xl outline-none;
 }
+
+.submit__btn {
+  @apply inline-block text-lg font-bold font-palanquin_park py-5 px-8 text-white bg-primary transition-all duration-300 hover:bg-secondary hover:text-des_gray uppercase;
+}

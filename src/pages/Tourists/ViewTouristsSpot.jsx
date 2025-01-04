@@ -66,13 +66,28 @@ const ViewTouristsSpot = () => {
             <div className="flex items-center gap-3 overflow-hidden">
               <div>
                 <h4 className="text-xl font-montserrat text-secondary font-bold">
-                  Location:
+                  Country:
                 </h4>
               </div>
               <div className="grow h-px border border-dashed border-secondary"></div>
               <div className="flex items-center gap-1 w-32">
                 <img src={locationIcon} className="size-6" alt="" />
                 <p className="text-des_gray text-lg font-montserrat font-semibold">
+                  {data?.data?.country_name}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3 overflow-hidden">
+              <div>
+                <h4 className="text-xl font-montserrat text-secondary font-bold">
+                  Location:
+                </h4>
+              </div>
+              <div className="grow h-px border border-dashed border-secondary"></div>
+              <div className="flex items-center gap-1">
+                <img src={locationIcon} className="size-6" alt="" />
+                <p className="text-des_gray text-lg font-montserrat font-semibold text-nowrap">
                   {data?.data?.location}
                 </p>
               </div>

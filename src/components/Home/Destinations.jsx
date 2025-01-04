@@ -12,7 +12,7 @@ const Destinations = () => {
         "http://localhost:5000/api/v1/tourists-spot/spots"
       );
 
-      setDestinations(response.data.data);
+      setDestinations(response.data.data.splice(0, 6));
     };
 
     fetchDestinations();

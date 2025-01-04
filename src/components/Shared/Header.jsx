@@ -18,7 +18,7 @@ const Header = () => {
   };
 
   return (
-    <header className="py-5">
+    <header className="py-5 bg-background">
       <nav className="container flex items-center justify-between">
         <div className="w-96">
           <h2 className="text-5xl font-mansalva font-bold text-black">

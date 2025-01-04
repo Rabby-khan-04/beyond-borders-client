@@ -33,8 +33,6 @@ const Login = () => {
       });
   };
 
-  console.log(location);
-
   return (
     <section className="bg-secondary h-screen flex items-center justify-center">
       <div className="container grid grid-cols-2 rounded-3xl overflow-hidden">
