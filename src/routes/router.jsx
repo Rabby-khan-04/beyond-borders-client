@@ -9,6 +9,8 @@ import UpdateTouristsSpot from "../pages/Tourists/UpdateTouristsSpot";
 import ViewTouristsSpot from "../pages/Tourists/ViewTouristsSpot";
 import SpotList from "../pages/Tourists/SpotList";
 import axios from "axios";
+import AddTouristsSpot from "../pages/Tourists/AddTouristsSpot";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -30,7 +32,11 @@ const router = createBrowserRouter([
       },
       {
         path: "add-tourists-spot",
-        element: <Register />,
+        element: (
+          <PrivateRoute>
+            <AddTouristsSpot />
+          </PrivateRoute>
+        ),
       },
       {
         path: "all-tourists-spot",

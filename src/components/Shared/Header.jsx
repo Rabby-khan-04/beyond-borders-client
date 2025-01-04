@@ -2,9 +2,21 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import userIcon from "../../assets/image/user-icon.png";
+import Toast from "../../utils/Toast";
 
 const Header = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logoutUser } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logoutUser()
+      .then(() => {
+        Toast.fire({ icon: "success", title: "Successfully Logout User" });
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+
   return (
     <header className="py-5">
       <nav className="container flex items-center justify-between">
@@ -46,26 +58,20 @@ const Header = () => {
               All Tourist Spots
             </NavLink>
           </li>
-          {user && (
-            <li>
-              <NavLink
-                to="/tourists-spot/:id"
-                className={({ isActive }) =>
-                  isActive ? "text-primary" : "text-black"
-                }
-              >
-                Tourist Spot Details
-              </NavLink>
-            </li>
-          )}
         </ul>
         <div className="w-96 flex items-center justify-end gap-4">
           {user ? (
-            <img
-              src={user?.photoURL || userIcon}
-              alt=""
-              className="size-12 rounded-full"
-            />
+            <>
+              <img
+                src={user?.photoURL || userIcon}
+                alt=""
+                title={user?.displayName}
+                className="size-12 rounded-full cursor-pointer"
+              />{" "}
+              <button onClick={handleLogout} className="primary__btn">
+                Logout
+              </button>
+            </>
           ) : (
             <Link className="primary__btn" to="/login">
               Login
