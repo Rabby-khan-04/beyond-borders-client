@@ -55,8 +55,12 @@ const router = createBrowserRouter([
           ),
       },
       {
-        path: "spot-list/:email",
+        path: "spot-list/:user_email",
         element: <SpotList />,
+        loader: ({ params }) =>
+          axios.get(
+            `http://localhost:5000/api/v1/tourists-spot/my-spots/${params.user_email}`
+          ),
       },
     ],
   },

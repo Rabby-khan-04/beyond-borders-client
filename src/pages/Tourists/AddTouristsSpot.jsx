@@ -216,7 +216,7 @@ const AddTouristsSpot = () => {
                   type="text"
                   id="totalVisitorsPerYear"
                   className="input"
-                  placeholder="Enter tota visitors per year "
+                  placeholder="Enter total visitors per year "
                   {...register("totalVisitorsPerYear", { required: true })}
                 />
                 {errors.totalVisitorsPerYear && (

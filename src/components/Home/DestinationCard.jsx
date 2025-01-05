@@ -24,7 +24,7 @@ const DestinationCard = ({ destination }) => {
           alt=""
         />
 
-        <div className="pt-4 pb-6 px-7 absolute w-full bottom-0 left-0 right-0 z-10 bg-background transition-all ease-in-out duration-300 translate-y-24 group-hover:translate-y-0">
+        <div className="pt-4 pb-6 px-7 absolute w-full min-h-[165px] bottom-0 left-0 right-0 z-10 bg-background transition-all ease-in-out duration-300 translate-y-24 group-hover:translate-y-0">
           <div className="flex items-center justify-between">
             <h2 className="font-palanquin_park text-primary text-2xl font-semibold">
               {tourists_spot_name}

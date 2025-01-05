@@ -58,6 +58,19 @@ const Header = () => {
               All Tourist Spots
             </NavLink>
           </li>
+
+          {user && (
+            <li>
+              <NavLink
+                to={`/spot-list/${user.email}`}
+                className={({ isActive }) =>
+                  isActive ? "text-primary" : "text-black"
+                }
+              >
+                My List
+              </NavLink>
+            </li>
+          )}
         </ul>
         <div className="w-96 flex items-center justify-end gap-4">
           {user ? (
