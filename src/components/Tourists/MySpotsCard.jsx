@@ -8,6 +8,9 @@ import { Link } from "react-router-dom";
 import { IoIosEye } from "react-icons/io";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
+import Swal from "sweetalert2";
+import axios from "axios";
+import Toast from "../../utils/Toast";
 
 const MySpotsCard = ({ destination }) => {
   const {
@@ -21,6 +24,37 @@ const MySpotsCard = ({ destination }) => {
     seasonality,
     totalVisitorsPerYear,
   } = destination;
+
+  const handleSpotDelete = async (id) => {
+    const result = await Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#325437",
+      cancelButtonColor: "#a7bb89",
+      confirmButtonText: "Yes, delete it!",
+    });
+
+    if (result.isConfirmed) {
+      const response = await axios.delete(
+        `http://localhost:5000/api/v1/tourists-spot/delete-spot/${id}`
+      );
+
+      if (response.data.data.deletedCount > 0) {
+        Toast.fire({
+          icon: "success",
+          title: "Tourist spot has been deleted.",
+        });
+      } else {
+        Toast.fire({
+          icon: "error",
+          title: "Something went wrong while deleting tourist spot",
+        });
+      }
+    }
+  };
+
   return (
     <div className="p-4 space-y-3 rounded-[20px] border border-transparent duration-300 transition-all hover:border-secondary">
       <img
@@ -79,7 +113,10 @@ const MySpotsCard = ({ destination }) => {
         >
           <FaEdit />
         </Link>
-        <button className="py-3 px-6 rounded-lg bg-red-500 text-white text-2xl transition-all duration-300 hover:bg-red-400">
+        <button
+          onClick={() => handleSpotDelete(_id)}
+          className="py-3 px-6 rounded-lg bg-red-500 text-white text-2xl transition-all duration-300 hover:bg-red-400"
+        >
           <MdDelete />
         </button>
       </div>

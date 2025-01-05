@@ -41,10 +41,20 @@ const router = createBrowserRouter([
       {
         path: "all-tourists-spot",
         element: <AllTouristsSpot />,
+        loader: () =>
+          axios.get("http://localhost:5000/api/v1/tourists-spot/spots"),
       },
       {
         path: "update-tourists-spot/:id",
-        element: <UpdateTouristsSpot />,
+        element: (
+          <PrivateRoute>
+            <UpdateTouristsSpot />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          axios.get(
+            `http://localhost:5000/api/v1/tourists-spot/spot/${params.id}`
+          ),
       },
       {
         path: "tourists-spot/:id",
@@ -56,7 +66,11 @@ const router = createBrowserRouter([
       },
       {
         path: "spot-list/:user_email",
-        element: <SpotList />,
+        element: (
+          <PrivateRoute>
+            <SpotList />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           axios.get(
             `http://localhost:5000/api/v1/tourists-spot/my-spots/${params.user_email}`
